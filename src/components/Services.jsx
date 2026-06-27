@@ -1,31 +1,6 @@
 import React from 'react'
-
-const services = [
-  {
-    title: 'Recruitment & Talent Acquisition',
-    body: 'End-to-end hiring support — role design, sourcing, structured interviews, and offer management.',
-  },
-  {
-    title: 'HR Strategy & Compliance',
-    body: 'Policy frameworks, labor law compliance, and HR systems tailored to how your business actually runs.',
-  },
-  {
-    title: 'Learning & Development',
-    body: 'Training programs and leadership development that build capability at every level of your organization.',
-  },
-  {
-    title: 'Performance & Culture',
-    body: 'Performance management systems and culture initiatives that keep your people engaged and accountable.',
-  },
-  {
-    title: 'Payroll & Benefits Advisory',
-    body: 'Guidance on compensation structuring, benefits design, and payroll processes that stay compliant and competitive.',
-  },
-  {
-    title: 'Outplacement & Transition',
-    body: 'Support for organizations and individuals navigating restructuring, with dignity and a clear path forward.',
-  },
-]
+import { Link } from 'react-router-dom'
+import { services } from '../data/services.js'
 
 export default function Services() {
   return (
@@ -41,14 +16,20 @@ export default function Services() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-navy-700">
           {services.map((s) => (
             <div
-              key={s.title}
-              className="bg-navy-900 p-8 hover:bg-navy-800 transition-colors group"
+              key={s.id}
+              className="bg-navy-900 p-8 hover:bg-navy-800 transition-colors group flex flex-col"
             >
               <div className="w-9 h-px bg-brass-500 mb-6 group-hover:w-14 transition-all duration-300" />
-              <h3 className="font-display text-lg text-ivory-warm font-medium leading-snug">
+              <h3 className="font-display text-lg text-ivory-warm font-medium leading-snug flex-1">
                 {s.title}
               </h3>
-              <p className="mt-3 text-sm text-ivory-warm/60 leading-relaxed">{s.body}</p>
+              <p className="mt-3 text-sm text-ivory-warm/60 leading-relaxed">{s.summary}</p>
+              <Link
+                to={`/services/${s.slug}`}
+                className="mt-6 inline-flex items-center gap-2 text-brass-400 text-xs font-mono tracking-widest2 uppercase hover:text-brass-300 transition-colors"
+              >
+                Full details →
+              </Link>
             </div>
           ))}
         </div>
