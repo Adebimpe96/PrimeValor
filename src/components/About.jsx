@@ -23,7 +23,7 @@ export default function About() {
     <section id="about" className="bg-ivory py-24 md:py-32">
       <div className="container-px grid md:grid-cols-12 gap-12">
         <div className="md:col-span-5">
-          <p className="eyebrow mb-5">About Primevalor</p>
+          <p className="eyebrow mb-5">Who We Are</p>
           <h2 className="font-display text-3xl md:text-4xl text-navy-900 leading-tight font-medium">
             An HR partner that treats people as the strategy, not the overhead.
           </h2>
