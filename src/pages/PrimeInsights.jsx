@@ -88,7 +88,7 @@ export default function PrimeInsights() {
               </h2>
               <p className="mt-4 text-slate-soft text-sm leading-relaxed">{article.excerpt}</p>
               <div className="mt-6 pt-5 border-t border-navy-900/10 flex items-center justify-between">
-                <span className="font-mono text-xs text-ivory-warm/40 bg-navy-900/10 px-3 py-1">
+                <span className="font-mono text-xs text-ivory-warm/85 bg-navy-900/40 px-3 py-1">
                   {article.date}
                 </span>
               </div>
