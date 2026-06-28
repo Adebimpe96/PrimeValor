@@ -37,12 +37,9 @@ export default function Navbar() {
     >
       <nav className="container-px flex items-center justify-between h-20">
         <Link to="/" className="flex items-baseline gap-2 group">
-          <span className="font-display text-xl md:text-2xl text-ivory-warm tracking-wide">
-            Primevalor
-          </span>
-          <span className="hidden sm:inline font-mono text-[10px] tracking-widest2 uppercase text-brass-400">
-            Consulting
-          </span>
+        <div className="bg-white/95 px-3 py-1.5 rounded-sm">
+          <img src="/logo.png" alt="Primevalor Consulting" className="h-7 w-auto" />
+        </div>
         </Link>
 
         <ul className="hidden md:flex items-center gap-10">
