@@ -32,14 +32,16 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-colors duration-300 ${
-        scrolled ? 'bg-navy-900/95 backdrop-blur shadow-lg shadow-navy-950/20' : 'bg-navy-900'
+        scrolled ? 'bg-ivory/95 backdrop-blur shadow-md shadow-navy-900/10' : 'bg-ivory'
       }`}
     >
       <nav className="container-px flex items-center justify-between h-20">
-        <Link to="/" className="flex items-baseline gap-2 group">
-        <div className="bg-white/95 px-3 py-1.5 rounded-sm">
-          <img src="/logo.png" alt="Primevalor Consulting" className="h-7 w-auto" />
-        </div>
+        <Link to="/" className="flex items-center">
+          <img
+            src="/logo.png"
+            alt="Primevalor Consulting"
+            className="h-12 w-auto"
+          />
         </Link>
 
         <ul className="hidden md:flex items-center gap-10">
@@ -48,7 +50,7 @@ export default function Navbar() {
               {l.href.startsWith('/') && !l.href.startsWith('/#') ? (
                 <Link
                   to={l.href}
-                  className="font-body text-sm text-ivory-warm/80 hover:text-brass-400 transition-colors"
+                  className="font-body text-bold text-navy-950/80 hover:text-brass-600 transition-colors font-medium"
                 >
                   {l.label}
                 </Link>
@@ -56,7 +58,7 @@ export default function Navbar() {
                 <a
                   href={l.href}
                   onClick={() => handleNav(l.href)}
-                  className="font-body text-sm text-ivory-warm/80 hover:text-brass-400 transition-colors"
+                  className="font-body text-bold text-navy-950/80 hover:text-brass-600 transition-colors font-medium"
                 >
                   {l.label}
                 </a>
@@ -67,13 +69,14 @@ export default function Navbar() {
 
         <a
           href="/#contact"
-          className="hidden md:inline-flex items-center border border-brass-500 text-brass-400 hover:bg-brass-500 hover:text-navy-900 transition-colors text-sm font-medium px-5 py-2.5"
+          className="hidden md:inline-flex items-center bg-navy-900 text-ivory-warm hover:bg-navy-800 transition-colors text-sm font-medium px-5 py-2.5"
         >
           Free consultation
         </a>
 
+        {/* Mobile hamburger */}
         <button
-          className="md:hidden text-ivory-warm w-9 h-9 flex flex-col items-center justify-center gap-1.5"
+          className="md:hidden text-navy-900 w-9 h-9 flex flex-col items-center justify-center gap-1.5"
           onClick={() => setOpen((v) => !v)}
           aria-label="Toggle menu"
           aria-expanded={open}
@@ -84,8 +87,9 @@ export default function Navbar() {
         </button>
       </nav>
 
+      {/* Mobile menu */}
       {open && (
-        <div className="md:hidden bg-navy-900 border-t border-navy-700">
+        <div className="md:hidden bg-ivory border-t border-navy-900/10">
           <ul className="container-px py-6 flex flex-col gap-5">
             {links.map((l) => (
               <li key={l.href}>
@@ -93,7 +97,7 @@ export default function Navbar() {
                   <Link
                     to={l.href}
                     onClick={() => setOpen(false)}
-                    className="font-body text-base text-ivory-warm/90 hover:text-brass-400"
+                    className="font-body text-base text-navy-900/80 hover:text-brass-600 font-medium"
                   >
                     {l.label}
                   </Link>
@@ -101,7 +105,7 @@ export default function Navbar() {
                   <a
                     href={l.href}
                     onClick={() => handleNav(l.href)}
-                    className="font-body text-base text-ivory-warm/90 hover:text-brass-400"
+                    className="font-body text-base text-navy-900/80 hover:text-brass-600 font-medium"
                   >
                     {l.label}
                   </a>
@@ -112,7 +116,7 @@ export default function Navbar() {
               <a
                 href="/#contact"
                 onClick={() => setOpen(false)}
-                className="inline-flex items-center border border-brass-500 text-brass-400 text-sm font-medium px-5 py-2.5"
+                className="inline-flex items-center bg-navy-900 text-ivory-warm text-sm font-medium px-5 py-2.5"
               >
                 Free consultation
               </a>
