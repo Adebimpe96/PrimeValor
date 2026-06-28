@@ -41,22 +41,6 @@ export default function Hero() {
               Explore services →
             </a>
           </div>
-
-          {/* Stat chips */}
-          <div className="mt-12 flex items-stretch gap-4">
-            <div className="bg-brass-500 px-5 py-4 text-center">
-              <p className="font-display text-2xl text-navy-900 font-medium">500+</p>
-              <p className="font-mono text-[9px] tracking-widest2 uppercase text-navy-900/70 mt-0.5">Placements</p>
-            </div>
-            <div className="border border-navy-700 px-5 py-4 text-center">
-              <p className="font-display text-2xl text-ivory-warm font-medium">10+</p>
-              <p className="font-mono text-[9px] tracking-widest2 uppercase text-ivory-warm/50 mt-0.5">Years active</p>
-            </div>
-            <div className="border border-navy-700 px-5 py-4 text-center">
-              <p className="font-display text-2xl text-ivory-warm font-medium">12+</p>
-              <p className="font-mono text-[9px] tracking-widest2 uppercase text-ivory-warm/50 mt-0.5">Sectors served</p>
-            </div>
-          </div>
         </div>
 
         {/* RIGHT — large bold blob image */}
